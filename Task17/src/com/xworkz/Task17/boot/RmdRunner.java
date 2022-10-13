@@ -51,7 +51,7 @@ public class RmdRunner {
 		 System.out.println(jerry.ingredients);
 		 
 		 Rmd metal1=new Rmd();
-		 metal1.contents="bital nuts";
+		 metal1.contents="bital nuts																																	";
 		 System.out.println(metal1.contents);
 		 
 		 Rmd metal2=new Rmd();
