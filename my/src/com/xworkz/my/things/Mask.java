@@ -1,4 +1,4 @@
-package com.xworkz.my;
+package com.xworkz.my.things;
 
 public class Mask {
 	
