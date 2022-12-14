@@ -10,6 +10,9 @@ public class Passanger implements AirportGuidelines{
 		
 		Passanger passanger=new Passanger();
 		System.out.println(passanger.maintainSocialDistance());
+		System.out.println(passanger.showPnrNoToStaff());
+
+		
 	}
 
 	@Override
@@ -20,7 +23,7 @@ public class Passanger implements AirportGuidelines{
 
 	@Override
 	public int showPnrNoToStaff() {
-		return 0;
+		return 34532;
 	}
 
 	@Override

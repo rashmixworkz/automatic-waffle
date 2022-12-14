@@ -7,10 +7,11 @@ public class EvenOrOdd {
 
 
 	     //checking whether the number is even or odd
-	     if (number % 2 == 0)
+	     if (number % 2 == 0) {
 	              System.out.println(number + " is Even");
-	     else
+	     }else {
 	              System.out.println(number + " is odd");
+	}
 	}
 	
 
