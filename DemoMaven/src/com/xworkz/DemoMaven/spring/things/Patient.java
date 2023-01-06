@@ -1,0 +1,12 @@
+package com.xworkz.DemoMaven.spring.things;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Patient {
+	
+	public Patient() {
+		System.out.println("Patient created by spring");
+	}
+
+}
