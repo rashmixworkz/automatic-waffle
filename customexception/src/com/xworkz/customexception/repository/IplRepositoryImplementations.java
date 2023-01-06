@@ -12,7 +12,7 @@ public class IplRepositoryImplementations implements IplRepository {
 
 	@Override
 	public boolean create(IplDTO dto){
-		System.out.println("running in implementations of iplrep[ository");
+		System.out.println("running in implementations of iplrepository");
 		if(this.index>=this.iplDTO.length) {
 			throw new ArraySizeExceededException();
 		}

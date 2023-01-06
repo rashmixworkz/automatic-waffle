@@ -9,7 +9,7 @@ public class Pg {
 	
 	public void fees()
 	{
-		System.out.println("fees from parent class");
+		System.out.println("fees from parent class 1234");
 	}
 
 }

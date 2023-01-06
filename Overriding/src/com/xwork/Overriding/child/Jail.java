@@ -6,7 +6,7 @@ public class Jail extends Pg{
 	
 	public void staying()
 	{
-		System.out.println("staying from parent class");
+		System.out.println("staying from child class");
 		super.staying();
 	}
 	
