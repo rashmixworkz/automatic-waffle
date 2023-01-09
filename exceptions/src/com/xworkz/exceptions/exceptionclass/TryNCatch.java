@@ -4,6 +4,7 @@ public class TryNCatch {
 
 	public static void main(String[] args) {
 	int a,b;
+
 	try {
 		a=0;
 		b=20/a;
