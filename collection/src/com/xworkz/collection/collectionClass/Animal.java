@@ -32,12 +32,21 @@ public class Animal {
 		animal.add(animal10);
 		System.out.println("animals name"+animal);
 		System.out.println("no of animals in list:"+animal.size());
+		System.out.println("before remove"+animal.size());
+	
+		
+		
+	Boolean v=animal.remove(animal6);
+	System.out.println(v);
+		System.out.println("after remove"+animal.size());
 		
 		System.out.println("***********************FOREACH LOOP*****************************");
 		for(String ani:animal) {
 			
 			System.out.println(ani);
+			
 		}
+		System.out.println("at index 1:"+animal.toArray()[8]);
 Iterator<String> animalName=animal.iterator();
 while (animalName.hasNext()) {
 	String string =animalName.next();
