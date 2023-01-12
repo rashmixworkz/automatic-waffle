@@ -21,7 +21,7 @@ public class ApplicationDtORunner {
 		applications.add(new ApplicationDtO("sql workbench", 2.3, false, "Google", 8321));
 		
 		
-		applications.stream().filter(e->e.isFree()).filter(e->e.getDevelopedBy()).map(ele->ele.getDevelopedBy()).collect(Collectors.toList()).forEach(e->System.out.println(e));
+	System.out.println(applications);
 		
 
 	}
