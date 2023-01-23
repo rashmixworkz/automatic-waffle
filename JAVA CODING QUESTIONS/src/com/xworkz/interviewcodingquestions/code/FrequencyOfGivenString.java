@@ -6,8 +6,8 @@ public class FrequencyOfGivenString {
 	{
       String str="Xworkz institute Banglore";
       int[] freq=new int[str.length()];
-      int i;
-      int j;
+      int i,j;
+     
       char string[]=str.toCharArray();
       for(  i= 0; i < str.length(); i++) 
       {

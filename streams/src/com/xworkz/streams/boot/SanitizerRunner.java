@@ -46,9 +46,7 @@ public class SanitizerRunner {
 		
 		System.out.println("***********************************");
 		
-		min
-		max
-		2ndmin
+	
 		
 	}
 

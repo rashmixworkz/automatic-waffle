@@ -11,5 +11,7 @@ public class Configurations {
 	public Configurations() {
 		System.out.println("created Configurations using no args const");
 	}
+	
+	
 
 }
