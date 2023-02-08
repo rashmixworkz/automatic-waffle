@@ -25,7 +25,7 @@ public class AbsoluteValueOfPandQ {
 	System.out.println("Enter the values : ");
 int value=scan.nextInt();
 AbsoluteValueOfPandQ.result(value);
-System.out.println(Math.
+
  
   
 

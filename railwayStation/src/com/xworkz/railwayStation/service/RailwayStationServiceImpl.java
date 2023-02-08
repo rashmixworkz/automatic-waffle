@@ -57,10 +57,9 @@ public class RailwayStationServiceImpl implements RailwayStationService{
 		System.out.println("storage values"+storedValue);
 		return storedValue;
 	}
+	return validPrice;
 		
-		throw new StorageFullException("Invalid storage item can not save")
 		
-		return false;
 	}											
 	
 	

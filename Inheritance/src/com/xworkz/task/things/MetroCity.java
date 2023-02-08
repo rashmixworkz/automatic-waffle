@@ -19,10 +19,7 @@ public class MetroCity {
 		Place city3=new City();
 		Object city4=new City();
 		
-		City metro2=new MetroCity();
-		Capital metro3= new MetroCity();
-		Place metro4=new MetroCity();
-		Object metro5=new MetroCity();
+		
 		
 		
 		

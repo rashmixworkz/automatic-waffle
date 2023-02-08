@@ -23,7 +23,7 @@ public class Runner {
 		System.out.println(Arrays.toString(ref.getBeanDefinitionNames()));
 		
 		
-		Browser browser=ref.getBean(null)
+	
 		
 		
 		
