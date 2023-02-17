@@ -22,7 +22,7 @@ public class EngineUsingAutowired {
 System.out.println("default cons of EngineUsingAutowired");
 	}
 
-	public EngineUsingAutowired(@Qualifier("engineNmae")String  name,@Qualifier("typeOfEngine") String type, int number, double version,@Qualifier("engineCompany") String company, int strokes) {
+	public EngineUsingAutowired(@Qualifier("engineName")String  name,@Qualifier("typeOfEngine") String type, int number, double version,@Qualifier("engineCompany") String company, int strokes) {
 		super();
 		this.name = name;
 		this.type = type;

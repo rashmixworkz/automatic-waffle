@@ -2,6 +2,7 @@ package com.xworkz.spring_autowiredTask.boot;
 
 import java.util.Arrays;
 
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,9 +11,6 @@ import com.xworkz.spring_autowiredTask.things.Movie;
 import com.xworkz.spring_autowiredTask.things.PetrolBunk;
 import com.xworkz.spring_autowiredTask.things.Shell;
 
-import implementsClasses.Chrome;
-import implementsClasses.FireBox;
-import interfaceClasses.Browser;
 
 public class Runner {
 

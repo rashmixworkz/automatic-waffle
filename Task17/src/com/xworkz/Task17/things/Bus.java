@@ -1,4 +1,4 @@
-package com.xworkz.Task17;
+package com.xworkz.Task17.things;
 
 public class Bus {
 	

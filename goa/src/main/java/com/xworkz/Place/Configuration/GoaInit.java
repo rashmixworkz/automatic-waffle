@@ -19,6 +19,7 @@ public class GoaInit extends AbstractAnnotationConfigDispatcherServletInitialize
 	}
 
 	@Override
+	
 	protected String[] getServletMappings() {
 		System.out.println("running getServletMappings");
 		return new String[] { "/" };

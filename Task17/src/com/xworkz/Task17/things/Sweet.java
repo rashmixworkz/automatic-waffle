@@ -20,7 +20,7 @@ public class Sweet {
 	
 	public void display() 
 	{
-		System.out.println('uy2 shopName);
+		System.out.println(this.shopName);
 		System.out.println(this.sweetName);
 		System.out.println(this.price);
 		System.out.println(this.color);
