@@ -32,17 +32,41 @@
 
 
 
-<h1>Welcome To MakeUpItem Search By Id Page</h1> <br>
-<h3>${message}</h3>
-<form action="search" method="post">
-Search by Id<input type="text" name="id"/>
-<input type="submit" value="search"/>
-<h4>Serach Results</h4>
-Name:${dto.name}<br>
-Price:${dto.price}<br>
-IsGood:${dto.isGood}<br>
-Brand:${dto.brand}<br>
-Floavour:${dto.floavour}<br>
+<h1>Welcome To MakeUpItem SearchByName Page</h1> <br>
+<form action="searchbyname" method="get">
+Search by Name<input type="text" name="name"/>
+<input type="submit" value="searchByName"/>
+
+
 </form>
+
+<br>
+
+<table class="table table-bordered">
+ 
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Price</th>
+      <th scope="col">Floavour</th>
+        <th scope="col">IsGood</th>
+         <th scope="col">Edit</th>
+    </tr>
+  </thead>
+
+<c:forEach items="${makeUpDto}" var="m">
+<tr>
+<td>${m.id}</td>
+<td>${m.name}</td>
+<td>${m.brand}</td>
+<td>${m.price}</td>
+<td>${m.floavour}</td>
+<td>${m.isGood}</td>
+<td><a href="update?id=${m.id}"></a></td>
+</tr>
+</c:forEach>
+</table>
 </body>
 </html>

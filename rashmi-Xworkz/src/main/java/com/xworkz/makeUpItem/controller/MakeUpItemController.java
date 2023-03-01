@@ -49,7 +49,7 @@ public class MakeUpItemController {
 			model.addAttribute("dto", dto);
 			model.addAttribute("message", "Data saved SuccessFully");
 			System.out.println("No voilations in controller");
-			return "MakeUpItem";
+			return "MakeUpItemSearch";
 		}
 		model.addAttribute("brand", brand);
 		model.addAttribute("floavour", floavour);
@@ -73,4 +73,26 @@ public class MakeUpItemController {
 		return "MakeUpItemSearch"; 
 
 }
+	@GetMapping("/searchbyname")
+	public String onSearch(@RequestParam String name,Model model) {
+		System.out.println("Running OnSearch in get method for name"+name);
+	List<MakeUpItemDto>	makeUpDto=this.makeUpItemService.findByName(name);
+	model.addAttribute("makeUpDto",makeUpDto);
+		return "MakeUpItemSearchByName";
+		
+	}
+	
+	@PostMapping("/update")
+	public String onUpdate(MakeUpItemDto dto,Model model) {
+		return "MakeUpItem";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

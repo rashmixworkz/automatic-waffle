@@ -1,13 +1,18 @@
 package com.xworkz.makeUpItem.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.xworkz.makeUpItem.entity.MakeUpItemEntity;
+
+import net.bytebuddy.build.Plugin.Factory;
 
 @Repository
 public class MakeUpItemRepoImpl implements MakeUpItemRepo {
@@ -38,5 +43,29 @@ public class MakeUpItemRepoImpl implements MakeUpItemRepo {
 		manager.close();
 		return mm;
 	}
+	
+	@Override
+		public List<MakeUpItemEntity> findByName(String name) {
+			System.out.println("Running find by name in repo");	
+			EntityManager factory=	this.entityManagerFactory.createEntityManager();
+	try {
+	Query query=factory.createNamedQuery("findByName");
+	query.setParameter("name", name);
+	List<MakeUpItemEntity>  list= query.getResultList();
+	return list;
+	}
+	finally{
+		factory.close();
+		System.out.println("Release the connection");
+	}
+			
+			
+			
+			
+			
+			
+			
+			
+		}
 
 }

@@ -9,14 +9,14 @@ public class ExampleOfCustomException {
 
 	}
 
-	public void method2() throws ArraySizeOverException {
+	public void method2() throws ArraySizeOverException  {
 		
 		throw new ArraySizeOverException();
 
 	}
 
 	public void method3() {
-		System.out.println("method 2");
+		System.out.println("method 3");
 
 	}
 }

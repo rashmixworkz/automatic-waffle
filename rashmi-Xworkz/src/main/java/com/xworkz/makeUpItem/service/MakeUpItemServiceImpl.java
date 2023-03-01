@@ -1,6 +1,8 @@
 package com.xworkz.makeUpItem.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -17,8 +19,8 @@ import com.xworkz.makeUpItem.repository.MakeUpItemRepo;
 
 @Service
 public class MakeUpItemServiceImpl implements MakeUpItemService {
-	
-@Autowired
+
+	@Autowired
 	private MakeUpItemRepo makeUpItemRepo;
 
 	public MakeUpItemServiceImpl() {
@@ -65,5 +67,34 @@ public class MakeUpItemServiceImpl implements MakeUpItemService {
 			}
 		}
 		return MakeUpItemService.super.findById(id);
+	}
+
+	@Override
+	public List<MakeUpItemDto> findByName(String name) {
+		System.out.println("Running find by name in service is valid");
+		if (name != null && !name.isEmpty()) {
+			List<MakeUpItemEntity> lists = this.makeUpItemRepo.findByName(name);
+			List<MakeUpItemDto> dtos = new ArrayList<MakeUpItemDto>();
+			for (MakeUpItemEntity entity : lists) {
+				MakeUpItemDto makeUpItemDto = new MakeUpItemDto();
+				makeUpItemDto.setId(entity.getId());
+				makeUpItemDto.setName(entity.getName());
+				makeUpItemDto.setBrand(entity.getBrand());
+				makeUpItemDto.setPrice(entity.getPrice());
+				makeUpItemDto.setIsGood(entity.isGood());
+				makeUpItemDto.setFloavour(entity.getFloavour());
+				dtos.add(makeUpItemDto);
+			}
+			System.out.println("List of dtos" + dtos.size());
+			System.out.println("List of entities" + lists.size());
+			return dtos;
+
+		}
+
+		else {
+			System.err.println("Name is invalid");
+		}
+		return MakeUpItemService.super.findByName(name);
+
 	}
 }

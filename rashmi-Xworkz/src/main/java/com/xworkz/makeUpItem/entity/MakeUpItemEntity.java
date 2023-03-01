@@ -1,14 +1,17 @@
 package com.xworkz.makeUpItem.entity;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.Data;
 @Data
 @Entity
 @Table(name="makeup_item_table")
+@NamedQuery(name="findByName",query="select entity from MakeUpItemEntity entity where entity.name=:name")
 public class MakeUpItemEntity {
 	@Id
 	@Column(name="m_id")
