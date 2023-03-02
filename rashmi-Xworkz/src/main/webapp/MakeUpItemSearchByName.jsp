@@ -64,7 +64,7 @@ Search by Name<input type="text" name="name"/>
 <td>${m.price}</td>
 <td>${m.floavour}</td>
 <td>${m.isGood}</td>
-<td><a href="update?id=${m.id}"></a></td>
+<td><a href="update?id=${m.id}">Edit</a></td>
 </tr>
 </c:forEach>
 </table>

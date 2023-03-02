@@ -68,4 +68,20 @@ public class MakeUpItemRepoImpl implements MakeUpItemRepo {
 			
 		}
 
+	@Override
+	public boolean update(MakeUpItemEntity entity) {
+		EntityManager factory=	this.entityManagerFactory.createEntityManager();
+		try {
+		EntityTransaction transaction = factory.getTransaction();
+		transaction.begin();
+		factory.merge(entity);
+		transaction.commit();
+		
+		return true;
+		}
+		finally {
+			factory.close();
+		}
+	}
+
 }

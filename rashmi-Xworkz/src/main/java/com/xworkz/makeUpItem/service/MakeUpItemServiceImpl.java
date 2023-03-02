@@ -58,6 +58,7 @@ public class MakeUpItemServiceImpl implements MakeUpItemService {
 			if (itemEntity != null) {
 				System.out.println("itemEntity is found in service in id" + id);
 				MakeUpItemDto dto1 = new MakeUpItemDto();
+				dto1.setId(itemEntity.getId());
 				dto1.setName(itemEntity.getName());
 				dto1.setBrand(itemEntity.getBrand());
 				dto1.setPrice(itemEntity.getPrice());
@@ -96,5 +97,31 @@ public class MakeUpItemServiceImpl implements MakeUpItemService {
 		}
 		return MakeUpItemService.super.findByName(name);
 
+	}
+
+	@Override
+	public Set<ConstraintViolation<MakeUpItemDto>> validateAndUpdate(MakeUpItemDto dto) {
+		
+			System.out.println("Running validateAndSave in AiroplaneServiceImpl");
+			ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+			Validator validator = validatorFactory.getValidator();
+			Set<ConstraintViolation<MakeUpItemDto>> voilations = validator.validate(dto);
+			if (voilations != null && !voilations.isEmpty()) {
+				System.err.println("voilations in dto");
+				return voilations;
+			} else {
+				System.out.println("voilation is not in dto ,can save details");
+				MakeUpItemEntity entity = new MakeUpItemEntity();
+				entity.setId(dto.getId());
+				entity.setName(dto.getName());
+				entity.setBrand(dto.getBrand());
+				entity.setPrice(dto.getPrice());
+				entity.setFloavour(dto.getFloavour());
+				entity.setGood(dto.getIsGood());
+
+				boolean saved = this.makeUpItemRepo.update(entity);
+				System.out.println("saved: " + saved);
+				return Collections.emptySet();
+			}
 	}
 }

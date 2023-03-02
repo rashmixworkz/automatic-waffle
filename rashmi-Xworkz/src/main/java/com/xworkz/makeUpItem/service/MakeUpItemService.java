@@ -18,5 +18,6 @@ public interface MakeUpItemService {
 	default List< MakeUpItemDto> findByName(String name) {
 		return null;
 	}
+	Set<ConstraintViolation<MakeUpItemDto>> validateAndUpdate(MakeUpItemDto dto);
 
 }

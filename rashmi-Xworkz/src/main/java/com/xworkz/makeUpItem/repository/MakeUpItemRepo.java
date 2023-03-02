@@ -8,6 +8,8 @@ import com.xworkz.makeUpItem.entity.MakeUpItemEntity;
 public interface MakeUpItemRepo {
 
 	boolean save(MakeUpItemEntity entity);
+	
+	boolean update(MakeUpItemEntity entity);
 
 	default MakeUpItemEntity findById(int id) {
 		return null;

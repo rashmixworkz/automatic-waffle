@@ -82,10 +82,30 @@ public class MakeUpItemController {
 		
 	}
 	
+	@GetMapping("/update")
+	public String onUpdate(@RequestParam int id,Model model) {
+		System.out.println("Running on update"+id);
+		MakeUpItemDto dto=	this.makeUpItemService.findById(id);
+		model.addAttribute("dto", dto);
+		model.addAttribute("brand", brand);
+		model.addAttribute("floavour", floavour);
+		return "MakeUpItemUpdate";
+	}
+	
 	@PostMapping("/update")
 	public String onUpdate(MakeUpItemDto dto,Model model) {
-		return "MakeUpItem";
+		System.out.println("Running on update"+dto);
+		Set<ConstraintViolation<MakeUpItemDto>> voilations=this.makeUpItemService.validateAndUpdate(dto);
+		if(voilations.size()>0) {
+			model.addAttribute("error", voilations);
+		}else {
+			model.addAttribute("message", "MakeUp update Success");
+
+		}
+		return "MakeUpItemUpdate";
+
 	}
+	
 	
 	
 	
