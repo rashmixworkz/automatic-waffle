@@ -41,7 +41,7 @@
 <form action="update" method="post">
 <pre>
 Id<input type="text" name="id" readonly="readonly" value="${dto.id}"/>
-Name<input type="text" name="name" readonly="readonly" value="${dto.name}"/>
+Name<input type="text" name="name" value="${dto.name}"/>
 Price<input type="text" name="price" value="${dto.price}"/>
 IsGood<input type="text" name="isGood" value="${dto.isGood}"/>
 Brand<select name="brand">

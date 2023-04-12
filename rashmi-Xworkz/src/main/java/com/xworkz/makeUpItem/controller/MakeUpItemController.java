@@ -49,7 +49,7 @@ public class MakeUpItemController {
 			model.addAttribute("dto", dto);
 			model.addAttribute("message", "Data saved SuccessFully");
 			System.out.println("No voilations in controller");
-			return "MakeUpItemSearch";
+			return "MakeUpItem";
 		}
 		model.addAttribute("brand", brand);
 		model.addAttribute("floavour", floavour);
@@ -105,7 +105,39 @@ public class MakeUpItemController {
 		return "MakeUpItemUpdate";
 
 	}
+	@GetMapping("/delete")
+	public String onDelete(@RequestParam int id,Model model) {
+		System.out.println("Running on delete");
+		MakeUpItemDto dto=this.makeUpItemService.deleteById(id);
+		model.addAttribute("delete", dto);
+		model.addAttribute("message", "Delete success...");
+		
+		return "Delete";
+	}
+	@GetMapping("findAll")
+	public String onFind(Model model) {
+		List<MakeUpItemDto> findall=this.makeUpItemService.findAll();
+		if(findall!=null) {
+			model.addAttribute("findall", findall);
+		}else {
+			model.addAttribute("message", "Data not found");
+		}
+		return "FindAll";
+	}
 	
+	
+	@GetMapping("/searchByNameAndPrice")
+	public String onSearch(@RequestParam String name,Double price, Model model) {
+		System.out.println("Running onSearch in getMethod for name and price" + name+price);
+		List<MakeUpItemDto>  dto1=this.makeUpItemService.findByNameAndPrice(name, price);
+		if (dto1 != null) {
+			model.addAttribute("dto1", dto1);
+		} else {
+			model.addAttribute("message", "data not found");
+		}
+		return "SearchByNameAndPrice"; 
+
+}
 	
 	
 	

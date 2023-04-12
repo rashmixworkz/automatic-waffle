@@ -12,6 +12,8 @@ import lombok.Data;
 @Entity
 @Table(name="makeup_item_table")
 @NamedQuery(name="findByName",query="select entity from MakeUpItemEntity entity where entity.name=:name")
+@NamedQuery(name="findAll",query="select en from MakeUpItemEntity en")
+@NamedQuery(name="findByNameAndPrice",query="select entity.name,entity.price from MakeUpItemEntity entity where entity.name=:name OR entity.price=:price")
 public class MakeUpItemEntity {
 	@Id
 	@Column(name="m_id")

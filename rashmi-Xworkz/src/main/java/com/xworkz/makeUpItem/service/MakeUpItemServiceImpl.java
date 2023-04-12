@@ -10,6 +10,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -124,4 +125,64 @@ public class MakeUpItemServiceImpl implements MakeUpItemService {
 				return Collections.emptySet();
 			}
 	}
+			@Override
+			public MakeUpItemDto deleteById(int id) {
+				
+					MakeUpItemEntity itemEntity = this.makeUpItemRepo.deleteById(id);
+					if (itemEntity != null) {
+						
+						MakeUpItemDto dto2 = new MakeUpItemDto();
+						dto2.setId(itemEntity.getId());
+						dto2.setName(itemEntity.getName());
+						dto2.setBrand(itemEntity.getBrand());
+						dto2.setPrice(itemEntity.getPrice());
+						dto2.setFloavour(itemEntity.getFloavour());
+						dto2.setIsGood(itemEntity.isGood());
+						return dto2;
+					}else {
+						
+					}
+				
+				return MakeUpItemService.super.deleteById(id);
+			}
+			@Override
+			public List<MakeUpItemDto> findAll() {
+System.out.println("Running findAll method in sevice");	
+List<MakeUpItemDto> list = new ArrayList<MakeUpItemDto>();
+
+List<MakeUpItemEntity> find=this.makeUpItemRepo.findAll();
+for(MakeUpItemEntity entity:find) {
+	MakeUpItemDto dto=new MakeUpItemDto();
+	BeanUtils.copyProperties(entity, dto);
+	list.add(dto);
+}
+System.out.println("List of lists" + list.size());
+System.out.println("List of find" + find.size());
+return list;
+			}
+			
+			@Override
+			public List<MakeUpItemDto> findByNameAndPrice(String name, Double price) {
+			System.out.println("Running findByNameAndPrice in service...");
+			if(name!=null || price!=0.0) {
+				System.out.println("name and price is valid");
+			List<MakeUpItemDto> li= new ArrayList<MakeUpItemDto>();
+
+			List<MakeUpItemEntity> nameAndPrice=this.makeUpItemRepo.findByNameAndPrice(name, price);
+			for(MakeUpItemEntity entity:nameAndPrice) {
+				MakeUpItemDto dto=new MakeUpItemDto();
+				BeanUtils.copyProperties(entity, dto);
+				li.add(dto);
+			}
+			System.out.println("List of lists" + li.size());
+			System.out.println("List of find" + nameAndPrice.size());
+			return li;
+			}
+			else {
+				System.out.println("name and price is not valid");
+			}
+			return MakeUpItemService.super.findByNameAndPrice(name, price);
+
+	
+}
 }

@@ -53,6 +53,7 @@ Search by Name<input type="text" name="name"/>
       <th scope="col">Floavour</th>
         <th scope="col">IsGood</th>
          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
     </tr>
   </thead>
 
@@ -65,6 +66,7 @@ Search by Name<input type="text" name="name"/>
 <td>${m.floavour}</td>
 <td>${m.isGood}</td>
 <td><a href="update?id=${m.id}">Edit</a></td>
+<td><a href="delete?id=${m.id}">Delete</a></td>
 </tr>
 </c:forEach>
 </table>

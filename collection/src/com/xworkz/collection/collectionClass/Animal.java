@@ -30,6 +30,7 @@ public class Animal {
 		animal.add(animal8);
 		animal.add(animal9);
 		animal.add(animal10);
+		
 		System.out.println("animals name"+animal);
 		System.out.println("no of animals in list:"+animal.size());
 		System.out.println("before remove"+animal.size());

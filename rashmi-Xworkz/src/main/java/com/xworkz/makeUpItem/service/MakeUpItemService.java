@@ -1,5 +1,6 @@
 package com.xworkz.makeUpItem.service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -20,4 +21,14 @@ public interface MakeUpItemService {
 	}
 	Set<ConstraintViolation<MakeUpItemDto>> validateAndUpdate(MakeUpItemDto dto);
 
+	default  MakeUpItemDto deleteById(int id) {
+		return null;
+	}
+	default List< MakeUpItemDto> findAll() {
+		return Collections.emptyList();
+	}
+	default List< MakeUpItemDto> findByNameAndPrice(String name,Double price) {
+		return Collections.emptyList();
+	}
+	
 }
